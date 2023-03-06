@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "declaration": true,
     "importHelpers": true,
     "module": "commonjs",
@@ -10,5 +12,8 @@
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/"
   ]
 }

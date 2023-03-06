@@ -1,10 +1,10 @@
 {
   "name": "usdc-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Send and Receive USDC Payments on Many Chains",
   "author": "Anypay",
   "bin": {
-    "usdc-cli": "./bin/run"
+    "usdc": "./bin/run"
   },
   "homepage": "https://github.com/anypay/usdc-cli",
   "license": "MIT",
@@ -19,7 +19,9 @@
   "dependencies": {
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.3.2"
+    "@oclif/plugin-plugins": "^2.3.2",
+    "dotenv": "^16.0.3",
+    "usdc": "file:../usdc"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.8",
@@ -47,8 +49,8 @@
     ],
     "topicSeparator": " ",
     "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
+      "wallet:balances": {
+        "description": "List USDC Wallet Balance For Each Chain"
       }
     }
   },
