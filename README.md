@@ -20,7 +20,7 @@ $ npm install -g usdc-cli
 $ usdc-cli COMMAND
 running command...
 $ usdc-cli (--version)
-usdc-cli/0.0.0 darwin-x64 node-v16.13.1
+usdc-cli/0.0.2 darwin-x64 node-v16.13.1
 $ usdc-cli --help [COMMAND]
 USAGE
   $ usdc-cli COMMAND
@@ -29,8 +29,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`usdc-cli hello PERSON`](#usdc-cli-hello-person)
-* [`usdc-cli hello world`](#usdc-cli-hello-world)
+* [`usdc-cli balances`](#usdc-cli-balances)
 * [`usdc-cli help [COMMANDS]`](#usdc-cli-help-commands)
 * [`usdc-cli plugins`](#usdc-cli-plugins)
 * [`usdc-cli plugins:install PLUGIN...`](#usdc-cli-pluginsinstall-plugin)
@@ -41,46 +40,30 @@ USAGE
 * [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-1)
 * [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-2)
 * [`usdc-cli plugins update`](#usdc-cli-plugins-update)
+* [`usdc-cli solana`](#usdc-cli-solana)
+* [`usdc-cli solana address`](#usdc-cli-solana-address)
+* [`usdc-cli solana history`](#usdc-cli-solana-history)
+* [`usdc-cli solana pay`](#usdc-cli-solana-pay)
+* [`usdc-cli solana request`](#usdc-cli-solana-request)
+* [`usdc-cli solana send`](#usdc-cli-solana-send)
+* [`usdc-cli wallet balances [FILE]`](#usdc-cli-wallet-balances-file)
 
-## `usdc-cli hello PERSON`
+## `usdc-cli balances`
 
-Say hello
-
-```
-USAGE
-  $ usdc-cli hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `usdc-cli hello world`
-
-Say hello world
+List USDC Balances for Each Chain
 
 ```
 USAGE
-  $ usdc-cli hello world
+  $ usdc-cli balances
 
 DESCRIPTION
-  Say hello world
+  List USDC Balances for Each Chain
 
 EXAMPLES
-  $ usdc-cli hello world
-  hello world! (./src/commands/hello/world.ts)
+  $ usdc balances
 ```
+
+_See code: [dist/commands/balances/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.2/dist/commands/balances/index.ts)_
 
 ## `usdc-cli help [COMMANDS]`
 
@@ -333,5 +316,119 @@ FLAGS
 
 DESCRIPTION
   Update installed plugins.
+```
+
+## `usdc-cli solana`
+
+List USDC Balances for Each Chain
+
+```
+USAGE
+  $ usdc-cli solana
+
+DESCRIPTION
+  List USDC Balances for Each Chain
+
+EXAMPLES
+  $ usdc balances
+```
+
+_See code: [dist/commands/solana/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.2/dist/commands/solana/index.ts)_
+
+## `usdc-cli solana address`
+
+Show Solana USDC Deposit Address
+
+```
+USAGE
+  $ usdc-cli solana address
+
+DESCRIPTION
+  Show Solana USDC Deposit Address
+
+EXAMPLES
+  usdc solana address
+```
+
+## `usdc-cli solana history`
+
+List USDC Transaction History for Solana Wallet
+
+```
+USAGE
+  $ usdc-cli solana history
+
+DESCRIPTION
+  List USDC Transaction History for Solana Wallet
+
+EXAMPLES
+  usdc solana history
+```
+
+## `usdc-cli solana pay`
+
+Pay a Payment Request URL with USDC on Solana
+
+```
+USAGE
+  $ usdc-cli solana pay
+
+DESCRIPTION
+  Pay a Payment Request URL with USDC on Solana
+
+EXAMPLES
+  usdc solana pay --url=https://anypayx.com/r/aG4331bf
+```
+
+## `usdc-cli solana request`
+
+Generate Payment Request URL to Receive USDC on Solana
+
+```
+USAGE
+  $ usdc-cli solana request
+
+DESCRIPTION
+  Generate Payment Request URL to Receive USDC on Solana
+
+EXAMPLES
+  usdc solana request --amount=100000
+```
+
+## `usdc-cli solana send`
+
+Send USDC to a single Solana address
+
+```
+USAGE
+  $ usdc-cli solana send
+
+DESCRIPTION
+  Send USDC to a single Solana address
+
+EXAMPLES
+  usdc solana send --address=Ef9ca7Uwkw9rrbdaWnUrrdMZJqPYykZ1dPLEv9yMpEjB --amount=100000
+```
+
+## `usdc-cli wallet balances [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ usdc-cli wallet balances [FILE] [-n <value>] [-f]
+
+ARGUMENTS
+  FILE  file to read
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ usdc-cli wallet balances
 ```
 <!-- commandsstop -->
