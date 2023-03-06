@@ -20,7 +20,7 @@ $ npm install -g usdc-cli
 $ usdc-cli COMMAND
 running command...
 $ usdc-cli (--version)
-usdc-cli/0.0.2 darwin-x64 node-v16.13.1
+usdc-cli/0.0.3 darwin-x64 node-v16.13.1
 $ usdc-cli --help [COMMAND]
 USAGE
   $ usdc-cli COMMAND
@@ -29,7 +29,11 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`usdc-cli algorand balance`](#usdc-cli-algorand-balance)
+* [`usdc-cli avalanche balance`](#usdc-cli-avalanche-balance)
 * [`usdc-cli balances`](#usdc-cli-balances)
+* [`usdc-cli ethereum balance`](#usdc-cli-ethereum-balance)
+* [`usdc-cli hedera balance`](#usdc-cli-hedera-balance)
 * [`usdc-cli help [COMMANDS]`](#usdc-cli-help-commands)
 * [`usdc-cli plugins`](#usdc-cli-plugins)
 * [`usdc-cli plugins:install PLUGIN...`](#usdc-cli-pluginsinstall-plugin)
@@ -40,13 +44,59 @@ USAGE
 * [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-1)
 * [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-2)
 * [`usdc-cli plugins update`](#usdc-cli-plugins-update)
+* [`usdc-cli polygon balance`](#usdc-cli-polygon-balance)
 * [`usdc-cli solana`](#usdc-cli-solana)
 * [`usdc-cli solana address`](#usdc-cli-solana-address)
+* [`usdc-cli solana balance`](#usdc-cli-solana-balance)
 * [`usdc-cli solana history`](#usdc-cli-solana-history)
 * [`usdc-cli solana pay`](#usdc-cli-solana-pay)
 * [`usdc-cli solana request`](#usdc-cli-solana-request)
 * [`usdc-cli solana send`](#usdc-cli-solana-send)
+* [`usdc-cli stellar balance`](#usdc-cli-stellar-balance)
+* [`usdc-cli tron balance`](#usdc-cli-tron-balance)
 * [`usdc-cli wallet balances [FILE]`](#usdc-cli-wallet-balances-file)
+
+## `usdc-cli algorand balance`
+
+Show Algorand USDC Balance
+
+```
+USAGE
+  $ usdc-cli algorand balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Algorand USDC Balance
+
+EXAMPLES
+  usdc algorand balance
+```
+
+## `usdc-cli avalanche balance`
+
+Show Avalanche USDC Balance
+
+```
+USAGE
+  $ usdc-cli avalanche balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Avalanche USDC Balance
+
+EXAMPLES
+  usdc avalanche balance --address=0x4da4bcf92ab8160906e5123c52da6c61a165adc4 --json
+```
 
 ## `usdc-cli balances`
 
@@ -63,7 +113,49 @@ EXAMPLES
   $ usdc balances
 ```
 
-_See code: [dist/commands/balances/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.2/dist/commands/balances/index.ts)_
+_See code: [dist/commands/balances/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.3/dist/commands/balances/index.ts)_
+
+## `usdc-cli ethereum balance`
+
+Show Ethereum USDC Balance
+
+```
+USAGE
+  $ usdc-cli ethereum balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Ethereum USDC Balance
+
+EXAMPLES
+  usdc ethereum balance --address=0x63fc765a644d31f87a2284fd4bf728c9d767d921 --json
+```
+
+## `usdc-cli hedera balance`
+
+Show Hedera USDC Balance
+
+```
+USAGE
+  $ usdc-cli hedera balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Hedera USDC Balance
+
+EXAMPLES
+  usdc hedera balance
+```
 
 ## `usdc-cli help [COMMANDS]`
 
@@ -318,6 +410,27 @@ DESCRIPTION
   Update installed plugins.
 ```
 
+## `usdc-cli polygon balance`
+
+Show Polygon USDC Balance
+
+```
+USAGE
+  $ usdc-cli polygon balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Polygon USDC Balance
+
+EXAMPLES
+  usdc polygon balance
+```
+
 ## `usdc-cli solana`
 
 List USDC Balances for Each Chain
@@ -333,7 +446,7 @@ EXAMPLES
   $ usdc balances
 ```
 
-_See code: [dist/commands/solana/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.2/dist/commands/solana/index.ts)_
+_See code: [dist/commands/solana/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.3/dist/commands/solana/index.ts)_
 
 ## `usdc-cli solana address`
 
@@ -348,6 +461,27 @@ DESCRIPTION
 
 EXAMPLES
   usdc solana address
+```
+
+## `usdc-cli solana balance`
+
+Show Solana USDC Balance
+
+```
+USAGE
+  $ usdc-cli solana balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Solana USDC Balance
+
+EXAMPLES
+  usdc solana balance
 ```
 
 ## `usdc-cli solana history`
@@ -408,6 +542,48 @@ DESCRIPTION
 
 EXAMPLES
   usdc solana send --address=Ef9ca7Uwkw9rrbdaWnUrrdMZJqPYykZ1dPLEv9yMpEjB --amount=100000
+```
+
+## `usdc-cli stellar balance`
+
+Show Stellar USDC Balance
+
+```
+USAGE
+  $ usdc-cli stellar balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Stellar USDC Balance
+
+EXAMPLES
+  usdc stellar balance
+```
+
+## `usdc-cli tron balance`
+
+Show Tron USDC Balance
+
+```
+USAGE
+  $ usdc-cli tron balance -a <value> [--json]
+
+FLAGS
+  -a, --address=<value>  (required) address to check balance for
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Show Tron USDC Balance
+
+EXAMPLES
+  usdc tron balance
 ```
 
 ## `usdc-cli wallet balances [FILE]`

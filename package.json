@@ -1,6 +1,6 @@
 {
   "name": "usdc-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Send and Receive USDC Payments on Many Chains",
   "author": "Anypay",
   "bin": {
