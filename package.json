@@ -24,7 +24,7 @@
     "usdc": "^0.0.7"
   },
   "devDependencies": {
-    "@oclif/test": "^2.3.8",
+    "@oclif/test": "^2.3.11",
     "@types/chai": "^4",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.18.14",
