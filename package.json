@@ -21,7 +21,7 @@
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.3.2",
     "dotenv": "^16.0.3",
-    "usdc": "^0.0.7"
+    "usdc": "^0.1.2"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.8",
