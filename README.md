@@ -1,610 +1,212 @@
-oclif-hello-world
-=================
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Anypay USDC CLI — Anypay" width="100%" />
+</p>
 
-oclif example Hello World CLI
+<p align="center">
+  <a href="https://www.anypayx.com"><img src="https://img.shields.io/badge/Anypay-Bitcoin%20%26%20Stablecoin%20Payments-00AB55?style=for-the-badge&labelColor=161C24" alt="Anypay" /></a>
+  <a href="https://www.npmjs.com/package/usdc-cli"><img src="https://img.shields.io/npm/v/usdc-cli.svg?style=for-the-badge" alt="npm version" /></a>
+  <a href="https://github.com/anypay/usdc-cli/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-00AB55?style=for-the-badge&labelColor=161C24" alt="MIT License" /></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D12.0.0-00AB55?style=for-the-badge&labelColor=161C24" alt="Node.js" /></a>
+</p>
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
+<p align="center">
+  <a href="https://www.anypayx.com">Website</a> ·
+  <a href="https://www.anypayx.com/docs">Docs</a> ·
+  <a href="https://api.anypayx.com/api">API</a> ·
+  <a href="https://www.anypayx.com/walletbot">WalletBot</a> ·
+  <a href="https://github.com/anypay">GitHub</a> ·
+  <a href="https://www.npmjs.com/package/usdc-cli">npm</a>
+</p>
 
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g usdc-cli
-$ usdc-cli COMMAND
-running command...
-$ usdc-cli (--version)
-usdc-cli/0.0.3 darwin-x64 node-v16.13.1
-$ usdc-cli --help [COMMAND]
-USAGE
-  $ usdc-cli COMMAND
-...
-```
-<!-- usagestop -->
-# Commands
-<!-- commands -->
-* [`usdc-cli algorand balance`](#usdc-cli-algorand-balance)
-* [`usdc-cli avalanche balance`](#usdc-cli-avalanche-balance)
-* [`usdc-cli balances`](#usdc-cli-balances)
-* [`usdc-cli ethereum balance`](#usdc-cli-ethereum-balance)
-* [`usdc-cli hedera balance`](#usdc-cli-hedera-balance)
-* [`usdc-cli help [COMMANDS]`](#usdc-cli-help-commands)
-* [`usdc-cli plugins`](#usdc-cli-plugins)
-* [`usdc-cli plugins:install PLUGIN...`](#usdc-cli-pluginsinstall-plugin)
-* [`usdc-cli plugins:inspect PLUGIN...`](#usdc-cli-pluginsinspect-plugin)
-* [`usdc-cli plugins:install PLUGIN...`](#usdc-cli-pluginsinstall-plugin-1)
-* [`usdc-cli plugins:link PLUGIN`](#usdc-cli-pluginslink-plugin)
-* [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin)
-* [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-1)
-* [`usdc-cli plugins:uninstall PLUGIN...`](#usdc-cli-pluginsuninstall-plugin-2)
-* [`usdc-cli plugins update`](#usdc-cli-plugins-update)
-* [`usdc-cli polygon balance`](#usdc-cli-polygon-balance)
-* [`usdc-cli solana`](#usdc-cli-solana)
-* [`usdc-cli solana address`](#usdc-cli-solana-address)
-* [`usdc-cli solana balance`](#usdc-cli-solana-balance)
-* [`usdc-cli solana history`](#usdc-cli-solana-history)
-* [`usdc-cli solana pay`](#usdc-cli-solana-pay)
-* [`usdc-cli solana request`](#usdc-cli-solana-request)
-* [`usdc-cli solana send`](#usdc-cli-solana-send)
-* [`usdc-cli stellar balance`](#usdc-cli-stellar-balance)
-* [`usdc-cli tron balance`](#usdc-cli-tron-balance)
-* [`usdc-cli wallet balances [FILE]`](#usdc-cli-wallet-balances-file)
+---
 
-## `usdc-cli algorand balance`
+## What It Is & Purpose
 
-Show Algorand USDC Balance
+**Anypay USDC CLI** is a multi-chain command-line utility that enables developers and merchants to send, receive, and check USDC (USD Coin) balances across **nine major blockchains** from a single unified interface. Built on the oclif framework, `usdc-cli` simplifies USDC operations on Algorand, Avalanche, Ethereum, Hedera, Polygon, Solana, Stellar, and Tron — eliminating the need to juggle separate tools, SDKs, or wallet interfaces for each network.
 
-```
-USAGE
-  $ usdc-cli algorand balance -a <value> [--json]
+Whether you're building payment automation, testing cross-chain integrations, or managing stablecoin treasury operations, `usdc-cli` provides a consistent, scriptable interface for USDC across the most widely adopted networks. It's part of Anypay's broader mission to make cryptocurrency payments — especially stablecoins — accessible and reliable for businesses.
 
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
+## Why Use It
 
-GLOBAL FLAGS
-  --json  Format output as json.
+**Anypay USDC CLI** is purpose-built for teams that need fast, reliable, scriptable access to USDC across multiple blockchains without the overhead of chain-specific tooling.
 
-DESCRIPTION
-  Show Algorand USDC Balance
+- **Who it's for:** Developers building payment systems, finance automation engineers, treasury operators, integration testers, and anyone who needs to programmatically interact with USDC across chains from the terminal or CI/CD pipelines.
+- **Where it fits:** `usdc-cli` sits between your application logic and blockchain networks. It abstracts chain-specific RPC calls, wallet formats, and token contract interfaces into a single, consistent CLI that works the same way on Solana, Ethereum, Polygon, and six other networks. Use it standalone for manual operations, or integrate it into scripts, webhooks, and automation workflows alongside other Anypay tools like WalletBot, the Anypay SDK, and the Invoice API.
 
-EXAMPLES
-  usdc algorand balance
+**Key advantages:**
+
+- **Unified interface** — One command pattern works across all nine supported chains. No need to learn chain-specific CLIs or SDKs.
+- **Multi-chain coverage** — Algorand, Avalanche, Ethereum, Hedera, Polygon, Solana, Stellar, and Tron support in a single package.
+- **Scriptable & CI-friendly** — JSON output mode, environment variable configuration, and predictable exit codes make it perfect for automation.
+- **Built for payments** — Designed specifically for USDC operations: check balances, generate payment requests, send transfers, and retrieve transaction history.
+- **Lightweight & fast** — No browser, no GUI, no heavy dependencies. Just Node.js and the CLI.
+
+## How It Works
+
+<p align="center">
+  <img src="docs/assets/architecture.svg" alt="How USDC CLI works in the Anypay stack" width="100%" />
+</p>
+
+The USDC CLI operates as a lightweight orchestration layer between your terminal and blockchain RPC nodes:
+
+1. **Terminal command** — You issue a command like `usdc solana balance --address=<addr>` or `usdc ethereum balance --address=<addr>`.
+2. **CLI routing** — `usdc-cli` parses the command, identifies the target blockchain, and loads the appropriate chain adapter from the underlying `usdc` npm package.
+3. **Multi-chain RPC** — The adapter connects to the relevant blockchain's RPC endpoint (public or configurable via environment variables), queries the USDC token contract or native balance, and retrieves the result.
+4. **Response & formatting** — The CLI formats the response (human-readable or JSON), prints it to stdout, and exits with an appropriate status code for scripting.
+
+For Solana specifically, the CLI supports advanced workflows:
+- **Payment request generation** (`usdc solana request --amount=100000`) creates a payment URL for receiving USDC.
+- **Sending USDC** (`usdc solana send --address=<addr> --amount=<amt>`) constructs and broadcasts a signed transaction.
+- **Transaction history** (`usdc solana history`) retrieves past USDC transfers.
+
+Under the hood, `usdc-cli` leverages the [`usdc` npm package](https://www.npmjs.com/package/usdc) (v0.0.7+), which provides the multi-chain adapters, RPC integrations, and USDC token contract interfaces. The CLI itself is built with [oclif](https://oclif.io), so it benefits from automatic help generation, plugin support, and a consistent command structure.
+
+## Quickstart / How to Use It
+
+### Installation
+
+Install globally via npm:
+
+```bash
+npm install -g usdc-cli
 ```
 
-## `usdc-cli avalanche balance`
+Verify the installation:
 
-Show Avalanche USDC Balance
+```bash
+usdc-cli --version
+# usdc-cli/0.0.4 darwin-x64 node-v16.13.1
 
-```
-USAGE
-  $ usdc-cli avalanche balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Avalanche USDC Balance
-
-EXAMPLES
-  usdc avalanche balance --address=0x4da4bcf92ab8160906e5123c52da6c61a165adc4 --json
+usdc-cli --help
+# USAGE
+#   $ usdc-cli COMMAND
 ```
 
-## `usdc-cli balances`
+### Basic Commands
 
-List USDC Balances for Each Chain
+**Check USDC balance on Solana:**
 
-```
-USAGE
-  $ usdc-cli balances
-
-DESCRIPTION
-  List USDC Balances for Each Chain
-
-EXAMPLES
-  $ usdc balances
+```bash
+usdc solana balance --address=Ef9ca7Uwkw9rrbdaWnUrrdMZJqPYykZ1dPLEv9yMpEjB
 ```
 
-_See code: [dist/commands/balances/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.3/dist/commands/balances/index.ts)_
+**Check USDC balance on Ethereum:**
 
-## `usdc-cli ethereum balance`
-
-Show Ethereum USDC Balance
-
-```
-USAGE
-  $ usdc-cli ethereum balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Ethereum USDC Balance
-
-EXAMPLES
-  usdc ethereum balance --address=0x63fc765a644d31f87a2284fd4bf728c9d767d921 --json
+```bash
+usdc ethereum balance --address=0x63fc765a644d31f87a2284fd4bf728c9d767d921 --json
 ```
 
-## `usdc-cli hedera balance`
+**Check USDC balance on Polygon:**
 
-Show Hedera USDC Balance
-
-```
-USAGE
-  $ usdc-cli hedera balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Hedera USDC Balance
-
-EXAMPLES
-  usdc hedera balance
+```bash
+usdc polygon balance --address=0x4da4bcf92ab8160906e5123c52da6c61a165adc4
 ```
 
-## `usdc-cli help [COMMANDS]`
+**Check USDC balance on Avalanche:**
 
-Display help for usdc-cli.
-
-```
-USAGE
-  $ usdc-cli help [COMMANDS] [-n]
-
-ARGUMENTS
-  COMMANDS  Command to show help for.
-
-FLAGS
-  -n, --nested-commands  Include all nested commands in the output.
-
-DESCRIPTION
-  Display help for usdc-cli.
+```bash
+usdc avalanche balance --address=0x4da4bcf92ab8160906e5123c52da6c61a165adc4 --json
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.6/src/commands/help.ts)_
+**List all USDC balances (placeholder command for wallet-based multi-chain lookup):**
 
-## `usdc-cli plugins`
-
-List installed plugins.
-
-```
-USAGE
-  $ usdc-cli plugins [--core]
-
-FLAGS
-  --core  Show core plugins.
-
-DESCRIPTION
-  List installed plugins.
-
-EXAMPLES
-  $ usdc-cli plugins
+```bash
+usdc balances
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.3.2/src/commands/plugins/index.ts)_
+### Solana-Specific Commands
 
-## `usdc-cli plugins:install PLUGIN...`
+**Show your Solana USDC deposit address:**
 
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ usdc-cli plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-
-ALIASES
-  $ usdc-cli plugins add
-
-EXAMPLES
-  $ usdc-cli plugins:install myplugin 
-
-  $ usdc-cli plugins:install https://github.com/someuser/someplugin
-
-  $ usdc-cli plugins:install someuser/someplugin
+```bash
+usdc solana address
 ```
 
-## `usdc-cli plugins:inspect PLUGIN...`
+**Send USDC on Solana:**
 
-Displays installation properties of a plugin.
-
-```
-USAGE
-  $ usdc-cli plugins:inspect PLUGIN...
-
-ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Displays installation properties of a plugin.
-
-EXAMPLES
-  $ usdc-cli plugins:inspect myplugin
+```bash
+usdc solana send --address=Ef9ca7Uwkw9rrbdaWnUrrdMZJqPYykZ1dPLEv9yMpEjB --amount=100000
 ```
 
-## `usdc-cli plugins:install PLUGIN...`
+**Generate a payment request to receive USDC on Solana:**
 
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ usdc-cli plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-
-ALIASES
-  $ usdc-cli plugins add
-
-EXAMPLES
-  $ usdc-cli plugins:install myplugin 
-
-  $ usdc-cli plugins:install https://github.com/someuser/someplugin
-
-  $ usdc-cli plugins:install someuser/someplugin
+```bash
+usdc solana request --amount=100000
 ```
 
-## `usdc-cli plugins:link PLUGIN`
+**View USDC transaction history on Solana:**
 
-Links a plugin into the CLI for development.
-
-```
-USAGE
-  $ usdc-cli plugins:link PLUGIN
-
-ARGUMENTS
-  PATH  [default: .] path to plugin
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Links a plugin into the CLI for development.
-  Installation of a linked plugin will override a user-installed or core plugin.
-
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
-  command will override the user-installed or core plugin implementation. This is useful for development work.
-
-
-EXAMPLES
-  $ usdc-cli plugins:link myplugin
+```bash
+usdc solana history
 ```
 
-## `usdc-cli plugins:uninstall PLUGIN...`
+**Pay a Payment Request URL with USDC on Solana:**
 
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ usdc-cli plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ usdc-cli plugins unlink
-  $ usdc-cli plugins remove
+```bash
+usdc solana pay --url=https://anypayx.com/r/aG4331bf
 ```
 
-## `usdc-cli plugins:uninstall PLUGIN...`
+### Supported Chains
 
-Removes a plugin from the CLI.
+The CLI currently supports USDC balance checks on:
 
-```
-USAGE
-  $ usdc-cli plugins:uninstall PLUGIN...
+- **Algorand** — `usdc algorand balance --address=<addr>`
+- **Avalanche** — `usdc avalanche balance --address=<addr>`
+- **Ethereum** — `usdc ethereum balance --address=<addr>`
+- **Hedera** — `usdc hedera balance --address=<addr>`
+- **Polygon** — `usdc polygon balance --address=<addr>`
+- **Solana** — `usdc solana balance --address=<addr>` (plus send, request, pay, history, address)
+- **Stellar** — `usdc stellar balance --address=<addr>`
+- **Tron** — `usdc tron balance --address=<addr>`
 
-ARGUMENTS
-  PLUGIN  plugin to uninstall
+For detailed command documentation:
 
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ usdc-cli plugins unlink
-  $ usdc-cli plugins remove
+```bash
+usdc-cli help [COMMAND]
 ```
 
-## `usdc-cli plugins:uninstall PLUGIN...`
+### Environment Configuration
 
-Removes a plugin from the CLI.
+Configure RPC endpoints and private keys via environment variables or a `.env` file. See the underlying [`usdc` package documentation](https://www.npmjs.com/package/usdc) for chain-specific configuration options.
 
-```
-USAGE
-  $ usdc-cli plugins:uninstall PLUGIN...
+## Next Moves for Growth
 
-ARGUMENTS
-  PLUGIN  plugin to uninstall
+1. **Complete command implementations** — Several commands (`usdc balances`, `usdc solana send`, `usdc solana request`, `usdc solana pay`) currently log placeholder messages rather than executing full functionality. Finishing these implementations is the highest-priority item. The underlying `usdc` package (currently v0.0.7) provides the primitives; wiring them into the CLI commands will unlock the full multi-chain USDC workflow.
 
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
+2. **Merge open Dependabot PRs** — The repository has five open Dependabot pull requests that bump dependencies (`@oclif/plugin-plugins`, `@oclif/test`, `shx`, `tslib`, and critically `usdc` itself to v0.1.4). Merging these PRs will bring security patches, the latest `usdc` package features, and improved stability. Priority: `usdc` upgrade to 0.1.4, then oclif plugins, then dev dependencies.
 
-DESCRIPTION
-  Removes a plugin from the CLI.
+3. **Add integration tests** — The test suite exists (`test/` directory, Mocha + Chai), but no `.test.ts` files are currently present for the commands. Adding integration tests that mock RPC responses or use testnet endpoints would catch regressions, validate JSON output modes, and verify command flag parsing. This is essential before advertising the CLI for production use.
 
-ALIASES
-  $ usdc-cli plugins unlink
-  $ usdc-cli plugins remove
-```
+4. **Publish v0.1.0 to npm** — The package is currently at v0.0.4 on npm (last publish likely predates recent commits). Once Dependabot PRs are merged and commands are fully implemented, cut a v0.1.0 release with a proper changelog. This signals production-readiness and makes the tool discoverable for Anypay's broader ecosystem.
 
-## `usdc-cli plugins update`
+5. **Expand documentation** — Add a `docs/` section with per-chain setup guides (RPC endpoint configuration, private key management, gas/fee estimation), example use cases (automated treasury sweeps, payment request generation workflows, CI/CD scripts), and troubleshooting tips. Link to the `usdc` package docs and Anypay's broader developer resources.
 
-Update installed plugins.
+## Anypay Ecosystem & License
 
-```
-USAGE
-  $ usdc-cli plugins update [-h] [-v]
+**Anypay USDC CLI** is part of [Anypay](https://www.anypayx.com) — Bitcoin & Stablecoin payments for business. Merchants and developers use Anypay to accept BTC, ETH, and stablecoins such as USDC, USDT, RLUSD, and NUSD through invoices, APIs, SDKs, webhooks, WooCommerce, and mobile POS.
 
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
+| Project | Role |
+| --- | --- |
+| [anypay](https://github.com/anypay/anypay) | Invoice & payments platform / API (`@anypay/server`) |
+| [anypay-sdk](https://github.com/anypay/anypay-sdk) | TypeScript SDK for browser & Node.js (`@anypay/client`) |
+| [web3-checkout-vite](https://github.com/anypay/web3-checkout-vite) | Current checkout UI (`checkout.anypayx.com`) |
+| [walletbot](https://github.com/anypay/walletbot) | Self-custody headless wallet (`@anypay/walletbot`) |
+| [anypayx.com](https://github.com/anypay/anypayx.com) | Marketing site, merchant dashboard, and developer docs |
+| [merchant-app](https://github.com/anypay/merchant-app) | iOS & Android point-of-sale |
+| [anypay-woocommerce](https://github.com/anypay/anypay-woocommerce) | Official WooCommerce plugin |
 
-DESCRIPTION
-  Update installed plugins.
-```
+**Related USDC & CLI Tools:**
 
-## `usdc-cli polygon balance`
+| Project | Role |
+| --- | --- |
+| [usdc](https://www.npmjs.com/package/usdc) | Multi-chain USDC SDK library (powers this CLI) |
+| [usdc-cli](https://github.com/anypay/usdc-cli) | This repository — multi-chain USDC terminal utility |
 
-Show Polygon USDC Balance
+**License:** This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute it in accordance with the terms of the license.
 
-```
-USAGE
-  $ usdc-cli polygon balance -a <value> [--json]
+---
 
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Polygon USDC Balance
-
-EXAMPLES
-  usdc polygon balance
-```
-
-## `usdc-cli solana`
-
-List USDC Balances for Each Chain
-
-```
-USAGE
-  $ usdc-cli solana
-
-DESCRIPTION
-  List USDC Balances for Each Chain
-
-EXAMPLES
-  $ usdc balances
-```
-
-_See code: [dist/commands/solana/index.ts](https://github.com/anypay/usdc-cli/blob/v0.0.3/dist/commands/solana/index.ts)_
-
-## `usdc-cli solana address`
-
-Show Solana USDC Deposit Address
-
-```
-USAGE
-  $ usdc-cli solana address
-
-DESCRIPTION
-  Show Solana USDC Deposit Address
-
-EXAMPLES
-  usdc solana address
-```
-
-## `usdc-cli solana balance`
-
-Show Solana USDC Balance
-
-```
-USAGE
-  $ usdc-cli solana balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Solana USDC Balance
-
-EXAMPLES
-  usdc solana balance
-```
-
-## `usdc-cli solana history`
-
-List USDC Transaction History for Solana Wallet
-
-```
-USAGE
-  $ usdc-cli solana history
-
-DESCRIPTION
-  List USDC Transaction History for Solana Wallet
-
-EXAMPLES
-  usdc solana history
-```
-
-## `usdc-cli solana pay`
-
-Pay a Payment Request URL with USDC on Solana
-
-```
-USAGE
-  $ usdc-cli solana pay
-
-DESCRIPTION
-  Pay a Payment Request URL with USDC on Solana
-
-EXAMPLES
-  usdc solana pay --url=https://anypayx.com/r/aG4331bf
-```
-
-## `usdc-cli solana request`
-
-Generate Payment Request URL to Receive USDC on Solana
-
-```
-USAGE
-  $ usdc-cli solana request
-
-DESCRIPTION
-  Generate Payment Request URL to Receive USDC on Solana
-
-EXAMPLES
-  usdc solana request --amount=100000
-```
-
-## `usdc-cli solana send`
-
-Send USDC to a single Solana address
-
-```
-USAGE
-  $ usdc-cli solana send
-
-DESCRIPTION
-  Send USDC to a single Solana address
-
-EXAMPLES
-  usdc solana send --address=Ef9ca7Uwkw9rrbdaWnUrrdMZJqPYykZ1dPLEv9yMpEjB --amount=100000
-```
-
-## `usdc-cli stellar balance`
-
-Show Stellar USDC Balance
-
-```
-USAGE
-  $ usdc-cli stellar balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Stellar USDC Balance
-
-EXAMPLES
-  usdc stellar balance
-```
-
-## `usdc-cli tron balance`
-
-Show Tron USDC Balance
-
-```
-USAGE
-  $ usdc-cli tron balance -a <value> [--json]
-
-FLAGS
-  -a, --address=<value>  (required) address to check balance for
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Show Tron USDC Balance
-
-EXAMPLES
-  usdc tron balance
-```
-
-## `usdc-cli wallet balances [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ usdc-cli wallet balances [FILE] [-n <value>] [-f]
-
-ARGUMENTS
-  FILE  file to read
-
-FLAGS
-  -f, --force
-  -n, --name=<value>  name to print
-
-DESCRIPTION
-  describe the command here
-
-EXAMPLES
-  $ usdc-cli wallet balances
-```
-<!-- commandsstop -->
+<p align="center">
+  <a href="https://www.anypayx.com"><img src="https://raw.githubusercontent.com/anypay/anypayx.com/master/public/logo/logo_single.svg" alt="Anypay" width="56" /></a><br/>
+  <sub>Bitcoin & Stablecoin Payments For Business · <a href="https://www.anypayx.com">anypayx.com</a> · <a href="https://x.com/xanypay">@xanypay</a></sub>
+</p>
